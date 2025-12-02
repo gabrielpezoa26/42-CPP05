@@ -1,0 +1,8 @@
+02/12/2025
+
+revisar:
+	-> try catch
+
+
+links:
+	https://www.geeksforgeeks.org/cpp/exceptionwhat-in-c-with-examples/
