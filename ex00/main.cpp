@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/02 16:42:42 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/02 17:33:10 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Bureaucrat a;
-	Bureaucrat b("jack sparrow", 1);
+	Bureaucrat b("jack sparrow", 1000);
 
 	
 	log("compileddd");
