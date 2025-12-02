@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/02 17:35:49 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/02 19:58:42 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <stdexcept>
+#include <exception>
 
 class Bureaucrat
 {
@@ -23,27 +23,39 @@ class Bureaucrat
 		int grade;
 
 
+
 	public:
-		/* ----- canonical form -----*/
+		/* ----- canonical form ----- */
 		Bureaucrat();
-		Bureaucrat(const std::string &given_name, unsigned int given_grade);
+		Bureaucrat(const std::string &given_name, int given_grade);
 		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat& operator=(const Bureaucrat& other);
 		~Bureaucrat();
 
 
-		/* ----- methods -----*/
+
+		/* ----- methods ----- */
 		std::string getName();
 		int getGrade();
 		void incrementGrade();
-		// decrementGrade();
+		void decrementGrade();
+		void printStats();
 
-		int GradeTooHighException();
-		// int GradeTooLowException();
-		
 
+
+	/* ----- exceptions ----- */
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
 };
-
 
 void	log(std::string message);
 

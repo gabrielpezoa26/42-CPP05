@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:07 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/02 17:35:55 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/02 20:00:15 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ Bureaucrat::Bureaucrat() : name("default_name"), grade(150)
 	// log("Bureaucrat-> Default constructor called");
 }
 
-Bureaucrat::Bureaucrat(const std::string &given_name, unsigned int given_grade)
+Bureaucrat::Bureaucrat(const std::string &given_name, int given_grade)
 	: name(given_name), grade(given_grade)
 {
-	if (given_grade < 1 || given_grade > 150)
-		throw(Bureaucrat::GradeTooHighException());
+	if (given_grade < 1)
+		throw(GradeTooHighException());
+	if (given_grade > 150)
+		throw(GradeTooLowException());
 	// log("Bureaucrat-> parameter constructor called");
 }
 
@@ -52,6 +54,7 @@ void log(std::string message)
 }
 
 
+
 /* ----- methods ----- */
 std::string Bureaucrat::getName()
 {
@@ -63,23 +66,36 @@ int Bureaucrat::getGrade()
 	return grade;
 }
 
-void Bureaucrat::incrementGrade()
+void Bureaucrat::incrementGrade() //revsar
 {
-	try
-	{
-		grade--;
-		if (grade < 1)
-			throw(Bureaucrat::GradeTooHighException());
-	}
-	catch(std::exception & e)
-	{
-		log("DEBUG: catch");
-		grade = 1;
-	}
+	if ((grade--) < 1)
+		throw(GradeTooHighException());
+	grade--;
 }
 
-int Bureaucrat::GradeTooHighException()
+void Bureaucrat::decrementGrade()
 {
-	log("DEBUG: exception called!");
-	return 1;
+	if ((grade++) > 150)
+		throw(GradeTooLowException());
+	grade++;
+}
+
+void Bureaucrat::printStats()
+{
+	log("printing stats...");
+	std::cout << "my name is " << name << std::endl;
+	std::cout << "my grade is "<< grade << std::endl;
+}
+
+
+
+/* ----- exceptions ----- */
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("DEBUG: vishhh nota ta mto alta");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("DEBUG: vish nota mto baixa");
 }
