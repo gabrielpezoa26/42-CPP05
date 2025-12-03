@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/02 19:58:42 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/03 06:02:58 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+
+#define DEBUG_FLAG 0
 
 class Bureaucrat
 {
@@ -58,5 +60,6 @@ class Bureaucrat
 };
 
 void	log(std::string message);
+std::ostream &operator<<(std::ostream &out_stream, Bureaucrat &x);
 
 #endif

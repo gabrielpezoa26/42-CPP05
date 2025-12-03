@@ -1,12 +1,9 @@
 02/12/2025
 
 ex00:
-	-> revisar métodos
-	-> revisar grade exceptions
 	-> overload <<
+	-> main()
 
-
-***ver se incrementa so um msm ou "amount"
 
 
 
