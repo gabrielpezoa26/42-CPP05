@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:07 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/03 05:37:36 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/04 19:38:07 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 /* ----- canonical form ----- */
 Bureaucrat::Bureaucrat() : name("default_name"), grade(150)
 {
-	if (DEBUG_FLAG)
-		log("Bureaucrat-> Default constructor called");
+	if (DEBUG_MODE)
+		logColor("Bureaucrat-> Default constructor called", YELLOW);
 }
 
 Bureaucrat::Bureaucrat(const std::string &given_name, int given_grade)
 	: name(given_name), grade(given_grade)
 {
-	if (DEBUG_FLAG)
-		log("Bureaucrat-> parameter constructor called");
+	if (DEBUG_MODE)
+		logColor("Bureaucrat-> parameter constructor called", YELLOW);
 	if (given_grade < 1)
 		throw(GradeTooHighException());
 	if (given_grade > 150)
@@ -32,8 +32,8 @@ Bureaucrat::Bureaucrat(const std::string &given_name, int given_grade)
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
-	if (DEBUG_FLAG)
-		log("Bureaucrat-> Copy constructor called");
+	if (DEBUG_MODE)
+		logColor("Bureaucrat-> Copy constructor called", YELLOW);
 	*this = other;
 }
 
@@ -48,8 +48,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 
 Bureaucrat::~Bureaucrat()
 {
-	if (DEBUG_FLAG)
-		log("Bureaucrat-> Default destructor called");
+	if (DEBUG_MODE)
+		logColor("Bureaucrat-> Default destructor called", RED);
 }
 
 
@@ -67,14 +67,16 @@ int Bureaucrat::getGrade()
 
 void Bureaucrat::incrementGrade()
 {
-	if ((grade--) < 1)
+	logColor("grade incremented!", YELLOW);
+	if ((grade - 1) < 1)
 		throw(GradeTooHighException());
 	grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	if ((grade++) > 150)
+	logColor("grade decremented!", YELLOW);
+	if ((grade + 1) > 150)
 		throw(GradeTooLowException());
 	grade++;
 }
@@ -86,17 +88,21 @@ void Bureaucrat::printStats()
 	std::cout << "my grade is "<< grade << std::endl;
 }
 
+void Bureaucrat::printGrade()
+{
+	std::cout << "my grade is "<< grade << std::endl;
+}
 
 
 /* ----- exceptions ----- */
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("DEBUG: vishhh nota ta mto alta");
+	return ("Exception caught: Grade too high!");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("DEBUG: vish nota mto baixa");
+	return ("Exception caught: Grade too low!");
 }
 
 
@@ -105,6 +111,11 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 void log(std::string message)
 {
 	std::cout << message << std::endl;
+}
+
+void logColor(std::string message, std::string color)
+{
+	std::cout << color << message << RESET << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out_stream, Bureaucrat &x)

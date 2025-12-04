@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/03 06:02:58 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/04 19:37:55 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 #include <iostream>
 #include <exception>
 
-#define DEBUG_FLAG 0
+#define GREEN "\033[32m"
+#define RED "\033[31m"
+#define BLUE "\033[34m"
+#define YELLOW "\033[33m"
+#define RESET "\033[0m"
+#define DEBUG_MODE 0
 
 class Bureaucrat
 {
@@ -42,6 +47,7 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void printStats();
+		void printGrade();
 
 
 
@@ -60,6 +66,7 @@ class Bureaucrat
 };
 
 void	log(std::string message);
+void	logColor(std::string message, std::string color);
 std::ostream &operator<<(std::ostream &out_stream, Bureaucrat &x);
 
 #endif
