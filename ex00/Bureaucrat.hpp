@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/04 19:37:55 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/04 23:42:20 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define GREEN "\033[32m"
 #define RED "\033[31m"
 #define BLUE "\033[34m"
+#define PURPLE "\033[35m"
 #define YELLOW "\033[33m"
 #define RESET "\033[0m"
 #define DEBUG_MODE 0
@@ -46,7 +47,7 @@ class Bureaucrat
 		int getGrade();
 		void incrementGrade();
 		void decrementGrade();
-		void printStats();
+		void printFullStats();
 		void printGrade();
 
 

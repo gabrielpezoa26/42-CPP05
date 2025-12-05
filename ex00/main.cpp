@@ -6,22 +6,24 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/04 19:42:40 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/04 23:45:43 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-void validBureaucrat()
+void testValidBureaucrat()
 {
-	log("creating valid bureaucrat");
+	logColor("creating valid bureaucrat", GREEN);
 	try
 	{
 		Bureaucrat a("Walter White", 3);
 		
-		a.printStats();
+		// a.printFullStats();
+		std::cout << a << std::endl;
 		a.incrementGrade();
-		a.printStats();
+		// a.printFullStats();
+		std::cout << a << std::endl;
 		log("\n\n\n");
 	}
 	catch(const std::exception& e)
@@ -30,12 +32,12 @@ void validBureaucrat()
 	}
 }
 
-void invalidBureaucrat()
+void testInvalidBureaucrat()
 {
-	log(" now trying to create a invalid bureaucrat");
+	logColor(" now trying to create a invalid bureaucrat", RED);
 	try
 	{
-		Bureaucrat b("Jesse pinkman", 151);
+		Bureaucrat b("Gus Fring", 151);
 		log("\n\n\n");
 
 	}
@@ -46,13 +48,15 @@ void invalidBureaucrat()
 	log("\n\n\n");
 }
 
-void invalidGradeChange()
+void testInvalidGradeChange()
 {
+	logColor(" and finally, testing grade incrementing/decrementing", BLUE);
 	try
 	{
-		Bureaucrat c("Hank Schrader", 3);
-		c.printStats();
-		log("wrongly incrementing grade...");
+		Bureaucrat c("Jesse Pinkman", 3);
+		log("Bureaucrat created!");
+		std::cout << c << std::endl;
+		log("incrementing grade...");
 		for(int i = 0; i < 5; i++)
 		{
 			c.incrementGrade();
@@ -66,16 +70,18 @@ void invalidGradeChange()
 
 
 
-	log(" now wrongly decrementing grade...");
+	log(" \nnow decrementing grade...");
 	try
 	{
 		Bureaucrat c("Hank Schrader", 148);
-		c.printStats();
+		log("Bureaucrat created!");
+		std::cout << c << std::endl;
 		for(int i = 0; i < 5; i++)
 		{
 			c.decrementGrade();
 			c.printGrade();
 		}
+
 	}
 	catch(const std::exception& e)
 	{
@@ -86,11 +92,9 @@ void invalidGradeChange()
 
 int main()
 {
-	validBureaucrat();
-	invalidBureaucrat();
+	testValidBureaucrat();
+	testInvalidBureaucrat();
 
-	invalidGradeChange();
-
-
+	testInvalidGradeChange();
 	return (0);
 }
