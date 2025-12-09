@@ -6,23 +6,34 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/04 23:45:43 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:11:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-void testValidBureaucrat()
+static void testValidBureaucrat();
+static void testInvalidBureaucrat();
+static void testInvalidGradeChange();
+
+int main()
+{
+	testValidBureaucrat();
+	testInvalidBureaucrat();
+
+	testInvalidGradeChange();
+	return (0);
+}
+
+static void testValidBureaucrat()
 {
 	logColor("creating valid bureaucrat", GREEN);
 	try
 	{
 		Bureaucrat a("Walter White", 3);
 		
-		// a.printFullStats();
 		std::cout << a << std::endl;
 		a.incrementGrade();
-		// a.printFullStats();
 		std::cout << a << std::endl;
 		log("\n\n\n");
 	}
@@ -32,12 +43,12 @@ void testValidBureaucrat()
 	}
 }
 
-void testInvalidBureaucrat()
+static void testInvalidBureaucrat()
 {
 	logColor(" now trying to create a invalid bureaucrat", RED);
 	try
 	{
-		Bureaucrat b("Gus Fring", 151);
+		Bureaucrat b("Hank Schrader", 151);
 		log("\n\n\n");
 
 	}
@@ -48,9 +59,9 @@ void testInvalidBureaucrat()
 	log("\n\n\n");
 }
 
-void testInvalidGradeChange()
+static void testInvalidGradeChange()
 {
-	logColor(" and finally, testing grade incrementing/decrementing", BLUE);
+	logColor(" and finally, testing grade incrementing/decrementing limits", BLUE);
 	try
 	{
 		Bureaucrat c("Jesse Pinkman", 3);
@@ -73,7 +84,7 @@ void testInvalidGradeChange()
 	log(" \nnow decrementing grade...");
 	try
 	{
-		Bureaucrat c("Hank Schrader", 148);
+		Bureaucrat c("Gus Fring", 148);
 		log("Bureaucrat created!");
 		std::cout << c << std::endl;
 		for(int i = 0; i < 5; i++)
@@ -88,13 +99,4 @@ void testInvalidGradeChange()
 		std::cerr << e.what() << '\n';
 	}
 	
-}
-
-int main()
-{
-	testValidBureaucrat();
-	testInvalidBureaucrat();
-
-	testInvalidGradeChange();
-	return (0);
 }

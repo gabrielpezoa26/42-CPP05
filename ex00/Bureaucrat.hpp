@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/04 23:42:20 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:09:51 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define PURPLE "\033[35m"
 #define YELLOW "\033[33m"
 #define RESET "\033[0m"
-#define DEBUG_MODE 0
+#define DEBUG_MODE false
 
 class Bureaucrat
 {
@@ -43,11 +43,10 @@ class Bureaucrat
 
 
 		/* ----- methods ----- */
-		std::string getName();
-		int getGrade();
+		std::string getName() const ;
+		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-		void printFullStats();
 		void printGrade();
 
 
@@ -68,6 +67,7 @@ class Bureaucrat
 
 void	log(std::string message);
 void	logColor(std::string message, std::string color);
-std::ostream &operator<<(std::ostream &out_stream, Bureaucrat &x);
+void	printDebug(std::string debug_message);
+std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &x);
 
 #endif
