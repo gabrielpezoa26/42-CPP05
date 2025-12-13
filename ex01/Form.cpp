@@ -6,23 +6,33 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:42:50 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/09 12:16:29 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 11:11:40 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()
+/* ----- canonical form ----- */
+Form::Form() 
+ : _name("Default"), _is_signed(false), _required_grade_to_sign(150), _required_grade_to_exec(150)
 {
 	if (DEBUG_MODE)
-		printDebug("Form-> Default constructor called");
+		printDebug("Default constructor called");
+}
+
+Form::Form(const std::string& name, int required_grade_to_sign, int required_grade_to_exec)
+ : _name(name), _is_signed(false), _required_grade_to_sign(required_grade_to_sign), _required_grade_to_exec(required_grade_to_exec)
+{
+	if (DEBUG_MODE)
+		printDebug("Form-> Parameter constructor called");
+	
 }
 
 Form::Form(const Form& other)
- : name(other.name),
- is_signed(other.is_signed),
- required_grade_to_sign(other.required_grade_to_sign),
- required_grade_to_exec(other.required_grade_to_exec)
+ : _name(other._name),
+ _is_signed(other._is_signed),
+ _required_grade_to_sign(other._required_grade_to_sign),
+ _required_grade_to_exec(other._required_grade_to_exec)
 {
 	if (DEBUG_MODE)
 		printDebug("Form-> Copy constructor called");
@@ -32,9 +42,7 @@ Form& Form::operator=(const Form& other)
 {
 	if (this != &other)
 	{
-		this->is_signed = other.is_signed;
-		this->is_signed = other.required_grade_to_sign;
-		this->is_signed = other.required_grade_to_exec;
+		this->_is_signed = other._is_signed;
 	}
 	return (*this);
 }
@@ -43,4 +51,27 @@ Form::~Form()
 {
 	if (DEBUG_MODE)
 		printDebug("Form-> Default destructor called");
+}
+
+
+
+/* ----- getters ----- */
+std::string Form::getName() const
+{
+	return _name;
+}
+
+bool Form::getIsSigned() const
+{
+	return _is_signed;
+}
+
+int Form::getRequiredGradeToSign() const
+{
+	return _required_grade_to_sign;
+}
+
+int Form::getRequiredGradeToExec() const
+{
+	return _required_grade_to_exec;
 }

@@ -1,7 +1,13 @@
 02/12/2025
 
-ex01:
-	->
+implementar:
+	ex01:
+		-> mudar pra const
+		-> validaçao de notas
+		-> Form exceptions
+
+
+		-> logica de assinar
 
 
 
