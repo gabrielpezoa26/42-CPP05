@@ -6,7 +6,14 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 17:23:07 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:30:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int main()
+{
+	log("compiled!");
+	return (0);
+}

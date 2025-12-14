@@ -20,8 +20,8 @@ objects/main.o: main.cpp
 objects/Bureaucrat.o: Bureaucrat.cpp
 	$(CC) $(CFLAGS) -c Bureaucrat.cpp -o objects/Bureaucrat.o
 
-objects/Form.o: Form.cpp
-	$(CC) $(CFLAGS) -c Form.cpp -o objects/AForm.o
+objects/AForm.o: AForm.cpp
+	$(CC) $(CFLAGS) -c AForm.cpp -o objects/AForm.o
 
 
 clean:
