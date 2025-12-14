@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 14:50:03 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:08:45 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
+static void testFormCreation();
 static void testFormSigning();
 
 int main()
@@ -25,9 +26,10 @@ int main()
 		testInvalidBureaucrat();
 		testInvalidGradeChange();
 	}
+	testFormCreation();
 	testFormSigning();
 
-
+	log("\nprogram finished :))");
 	return (0);
 }
 
@@ -107,13 +109,75 @@ static void testInvalidGradeChange()
 	
 }
 
+static void testFormCreation()
+{
+	try
+	{
+		log("Testing form creation");
+		log("creating a valid form...");
+		Form validForm("valid_form", 10, 20);
+		std::cout << validForm << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		log("attempting to create a invalid form...");
+		Form invalidForm("invalid_form", 100, 151);
+		std::cout << invalidForm << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		log("\nattempting to create a invalid form again...");
+		Form invalidForm("invalid_form", 100, -1);
+		std::cout << invalidForm << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+}
+
+
 static void testFormSigning()
 {
-	Bureaucrat a("bob", 60);
-	Form b("mangoloko", 100, 50);
+	try
+	{
+		logColor("\n\n now let's make a bureaucrat sign something", YELLOW);
+		Bureaucrat a("bob", 60);
+		Form b("form_one", 100, 50);
 
-	std::cout << b << std::endl;
+		std::cout << b << std::endl;
 
-	a.signForm(a, b);
-	std::cout << b << std::endl;
+		a.signForm(a, b);
+		std::cout << b << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		logColor("Now attempting to sign a form....", RED);
+		Bureaucrat x("Johnny", 101);
+		Form y("form_two", 100, 100);
+
+		std::cout << y << std::endl;
+		x.signForm(x, y);
+		std::cout << y << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }

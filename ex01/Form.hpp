@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 14:52:03 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:50:16 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
-
 class Bureaucrat;
+
 
 class Form
 {
@@ -44,9 +44,9 @@ class Form
 		int		getRequiredGradeToSign() const;
 		int		getRequiredGradeToExec() const;
 
+
 		/* ----- methods ----- */
 		void beSigned(const Bureaucrat &x);
-		void printFormStats();
 
 
 

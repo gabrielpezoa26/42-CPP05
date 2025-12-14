@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:42:50 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 14:48:21 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:47:05 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,23 +111,14 @@ void Form::beSigned(const Bureaucrat &x)
 	}
 }
 
-void Form::printFormStats()
-{
-	std::cout << _name << std::endl;
-	std::cout << _is_signed << std::endl;
-	std::cout << _required_grade_to_sign << std::endl;
-	std::cout << _required_grade_to_exec << std::endl;
-}
-
 std::ostream &operator<<(std::ostream &out_stream, const Form &x)
 {
 	if (DEBUG_MODE)
 		printDebug("Form-> insertion (<<) overload operator called");
 
-
-	out_stream << "form name is: " << x.getName() << std::endl;
-	out_stream << "form signed is: " << x.getIsSigned() << std::endl;
-	out_stream << "form sign grade is: " << x.getRequiredGradeToSign() << std::endl;
-	out_stream << "form exec grade is: " << x.getRequiredGradeToExec() << std::endl;
+	out_stream << "the form name is: " << x.getName() << std::endl;
+	out_stream << "is it signed? " << x.getIsSigned() << std::endl;
+	out_stream << "the sign grade is: " << x.getRequiredGradeToSign() << std::endl;
+	out_stream << "the exec grade is: " << x.getRequiredGradeToExec() << std::endl;
 	return (out_stream);
 }

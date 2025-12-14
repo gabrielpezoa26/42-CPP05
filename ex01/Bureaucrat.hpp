@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 14:24:08 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:02:56 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <exception>
 #include "Form.hpp"
+
+class Form;
 
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -27,7 +29,6 @@
 #define DEBUG_MODE false
 #define FULL_TEST false
 
-class Form;
 
 class Bureaucrat
 {
@@ -54,6 +55,7 @@ class Bureaucrat
 		void printGrade();
 		void signForm(Bureaucrat &x, Form &y);
 
+		
 
 	/* ----- exceptions ----- */
 	class GradeTooHighException : public std::exception
