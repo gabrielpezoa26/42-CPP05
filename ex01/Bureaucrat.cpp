@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:07 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 22:15:05 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:24:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,22 +89,22 @@ void Bureaucrat::printGrade()
 	std::cout << "my grade is "<< grade << std::endl;
 }
 
-void Bureaucrat::signForm(Bureaucrat x)
+void Bureaucrat::signForm(Bureaucrat &x, Form &y)
 {
-	Form Form;
-	
 	try
 	{
-		Form.beSigned(x);
-		std::cout << x.getName() << " signed " << Form.getName() << std::endl;
+		y.beSigned(x);
+		std::cout << x.getName() << " signed " << y.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-		std::cout << x.getName() << "couldn’t sign " << Form.getName() << " because " << e.what() << std::endl;
+		std::cout << x.getName() << " couldn’t sign " << y.getName() << " because " << e.what() << std::endl;
 	}
 	
 }
+
+
 
 /* ----- exceptions ----- */
 const char *Bureaucrat::GradeTooHighException::what() const throw()

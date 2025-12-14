@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:42:50 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 22:15:05 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:48:21 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* ----- canonical form ----- */
 Form::Form() 
- : _name("Default"), _is_signed(false), _required_grade_to_sign(150), _required_grade_to_exec(150)
+ : _name("standard_form"), _is_signed(false), _required_grade_to_sign(150), _required_grade_to_exec(150)
 {
 	if (DEBUG_MODE)
 		printDebug("Default constructor called");
@@ -28,7 +28,7 @@ Form::Form(const std::string& name, int required_grade_to_sign, int required_gra
 	if (required_grade_to_sign < 1 || required_grade_to_exec < 1)
 		throw(GradeTooHighException());
 	if (required_grade_to_sign > 150 || required_grade_to_exec > 150)
-		throw(GradeTooHighException());
+		throw(GradeTooLowException());
 	
 	
 }
@@ -97,14 +97,37 @@ const char *Form::GradeTooLowException::what() const throw()
 
 
 /* ----- methods ----- */
-
-void Form::beSigned(Bureaucrat Bureaucrat)
+void Form::beSigned(const Bureaucrat &x)
 {
 	if (DEBUG_MODE)
 		printDebug("beSigned() called");
-	if (Bureaucrat.getGrade() >= _required_grade_to_sign)
+	if (x.getGrade() <= _required_grade_to_sign)
+	{
 		_is_signed = true;
-	else if (Bureaucrat.getGrade() < _required_grade_to_sign)
+	}
+	else if (x.getGrade() > _required_grade_to_sign)
+	{
 		throw(GradeTooLowException());
+	}
+}
 
+void Form::printFormStats()
+{
+	std::cout << _name << std::endl;
+	std::cout << _is_signed << std::endl;
+	std::cout << _required_grade_to_sign << std::endl;
+	std::cout << _required_grade_to_exec << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out_stream, const Form &x)
+{
+	if (DEBUG_MODE)
+		printDebug("Form-> insertion (<<) overload operator called");
+
+
+	out_stream << "form name is: " << x.getName() << std::endl;
+	out_stream << "form signed is: " << x.getIsSigned() << std::endl;
+	out_stream << "form sign grade is: " << x.getRequiredGradeToSign() << std::endl;
+	out_stream << "form exec grade is: " << x.getRequiredGradeToExec() << std::endl;
+	return (out_stream);
 }

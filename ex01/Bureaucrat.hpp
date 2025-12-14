@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 22:15:55 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:24:08 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@
 #define RESET "\033[0m"
 
 #define DEBUG_MODE false
-#define FULL_TEST true
+#define FULL_TEST false
+
+class Form;
 
 class Bureaucrat
 {
@@ -50,7 +52,7 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void printGrade();
-		void signForm(Bureaucrat x);
+		void signForm(Bureaucrat &x, Form &y);
 
 
 	/* ----- exceptions ----- */

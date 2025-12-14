@@ -1,8 +1,9 @@
 02/12/2025
 
 revisar:
-	-> validaçao de notas
-	-> logica de assinar
+	-> revisar logica
+
+
 
 implementar:
 	-> testes na main()

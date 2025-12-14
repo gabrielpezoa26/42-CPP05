@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 22:14:42 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:50:03 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,11 @@ static void testInvalidGradeChange()
 
 static void testFormSigning()
 {
-	log("\n obaaaaaaaaaaaaa");
+	Bureaucrat a("bob", 60);
+	Form b("mangoloko", 100, 50);
+
+	std::cout << b << std::endl;
+
+	a.signForm(a, b);
+	std::cout << b << std::endl;
 }

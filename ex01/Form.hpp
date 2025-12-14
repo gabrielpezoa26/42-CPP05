@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 20:55:36 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:52:03 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ class Form
 		int		getRequiredGradeToExec() const;
 
 		/* ----- methods ----- */
-		void beSigned(Bureaucrat Bureaucrat);
+		void beSigned(const Bureaucrat &x);
+		void printFormStats();
 
 
 
@@ -64,6 +65,8 @@ class Form
 	};
 
 };
+
+std::ostream &operator<<(std::ostream &out_stream, const Form &x);
 
 
 #endif
