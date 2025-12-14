@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 20:59:59 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 22:14:42 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
-// static void testFormSigning();
+static void testFormSigning();
 
 int main()
 {
-	testValidBureaucrat();
-	testInvalidBureaucrat();
-	testInvalidGradeChange();
-	// testFormSigning();
+	if (FULL_TEST)
+	{
+		testValidBureaucrat();
+		testInvalidBureaucrat();
+		testInvalidGradeChange();
+	}
+	testFormSigning();
 
 
 	return (0);
@@ -104,7 +107,7 @@ static void testInvalidGradeChange()
 	
 }
 
-// static void testFormSigning()
-// {
-// 	log("\n now")
-// }
+static void testFormSigning()
+{
+	log("\n obaaaaaaaaaaaaa");
+}

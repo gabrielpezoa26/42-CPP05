@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 17:23:56 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 22:15:55 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 #define PURPLE "\033[35m"
 #define YELLOW "\033[33m"
 #define RESET "\033[0m"
+
 #define DEBUG_MODE false
+#define FULL_TEST true
 
 class Bureaucrat
 {

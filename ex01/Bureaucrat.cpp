@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:07 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 17:22:16 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 22:15:05 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,15 @@ void Bureaucrat::signForm(Bureaucrat x)
 	try
 	{
 		Form.beSigned(x);
-		log("DEBUG: beSigned()");
+		std::cout << x.getName() << " signed " << Form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+		std::cout << x.getName() << "couldn’t sign " << Form.getName() << " because " << e.what() << std::endl;
 	}
 	
 }
-
 
 /* ----- exceptions ----- */
 const char *Bureaucrat::GradeTooHighException::what() const throw()
