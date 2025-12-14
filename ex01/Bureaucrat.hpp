@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 11:23:34 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:23:56 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -42,11 +43,12 @@ class Bureaucrat
 
 
 		/* ----- methods ----- */
-		std::string getName() const ;
+		std::string getName() const;
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
 		void printGrade();
+		void signForm(Bureaucrat x);
 
 
 	/* ----- exceptions ----- */

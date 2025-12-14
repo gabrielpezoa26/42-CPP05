@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:42:50 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 11:11:40 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:23:52 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ Form::Form(const std::string& name, int required_grade_to_sign, int required_gra
 {
 	if (DEBUG_MODE)
 		printDebug("Form-> Parameter constructor called");
+	if (required_grade_to_sign < 1 || required_grade_to_exec < 1)
+		throw(GradeTooHighException());
+	if (required_grade_to_sign > 150 || required_grade_to_exec > 150)
+		throw(GradeTooHighException());
+	
 	
 }
 
@@ -74,4 +79,32 @@ int Form::getRequiredGradeToSign() const
 int Form::getRequiredGradeToExec() const
 {
 	return _required_grade_to_exec;
+}
+
+
+
+/* ----- exceptions ----- */
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return ("Form-> Exception caught: Grade too high! (Grade must be between 1 and 150)");
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Form-> Exception caught: Grade too low! (Grade must be between 1 and 150)");
+}
+
+
+
+/* ----- methods ----- */
+
+void Form::beSigned(Bureaucrat Bureaucrat)
+{
+	if (DEBUG_MODE)
+		printDebug("beSigned() called");
+	if (Bureaucrat.getGrade() >= _required_grade_to_sign)
+		_is_signed = true;
+	else if (Bureaucrat.getGrade() < _required_grade_to_sign)
+		throw(GradeTooLowException());
+
 }

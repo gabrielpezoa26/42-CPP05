@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/09 08:11:32 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:58:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 {
 	testValidBureaucrat();
 	testInvalidBureaucrat();
-
 	testInvalidGradeChange();
+
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:07 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/09 10:09:22 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:22:16 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,32 @@ void Bureaucrat::printGrade()
 	std::cout << "my grade is "<< grade << std::endl;
 }
 
+void Bureaucrat::signForm(Bureaucrat x)
+{
+	Form Form;
+	
+	try
+	{
+		Form.beSigned(x);
+		log("DEBUG: beSigned()");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+}
+
 
 /* ----- exceptions ----- */
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Exception caught: Grade too high! (Grade must be between 1 and 150)");
+	return ("Bureaucrat-> Exception caught: Grade too high! (Grade must be between 1 and 150)");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Exception caught: Grade too low! (Grade must be between 1 and 150)");
+	return ("Bureaucrat-> Exception caught: Grade too low! (Grade must be between 1 and 150)");
 }
 
 

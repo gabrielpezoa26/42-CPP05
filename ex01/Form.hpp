@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:43:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/13 11:23:40 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:55:36 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
+
+
+class Bureaucrat;
 
 class Form
 {
@@ -41,10 +44,26 @@ class Form
 		int		getRequiredGradeToSign() const;
 		int		getRequiredGradeToExec() const;
 
+		/* ----- methods ----- */
+		void beSigned(Bureaucrat Bureaucrat);
 
+
+
+
+	/* ----- exceptions ----- */
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
 
 };
-
 
 
 #endif
