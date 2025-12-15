@@ -6,10 +6,9 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:23 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 20:30:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 21:14:19 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
@@ -18,7 +17,7 @@
 #include <exception>
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -54,7 +53,8 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void printGrade();
-		void signForm(Bureaucrat &x, Form &y);
+		void signForm(Bureaucrat &x, AForm &y);
+		// void executeForm(AForm const &form) const;
 
 		
 

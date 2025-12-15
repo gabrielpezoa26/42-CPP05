@@ -6,26 +6,25 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 20:32:01 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 22:16:03 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "AForm.hpp"
 
 /* ----- canonical form ----- */
-Form::Form() 
+AForm::AForm() 
  : _name("standard_form"), _is_signed(false), _required_grade_to_sign(150), _required_grade_to_exec(150)
 {
 	if (DEBUG_MODE)
-		printDebug("Default constructor called");
+		printDebug("AForm-> Default constructor called");
 }
 
-Form::Form(const std::string& name, int required_grade_to_sign, int required_grade_to_exec)
- : _name(name), _is_signed(false), _required_grade_to_sign(required_grade_to_sign), _required_grade_to_exec(required_grade_to_exec)
+AForm::AForm(const std::string& name, int required_grade_to_sign, int required_grade_to_exec, const std::string &target)
+ : _name(name), _is_signed(false), _required_grade_to_sign(required_grade_to_sign), _required_grade_to_exec(required_grade_to_exec), _target(target)
 {
 	if (DEBUG_MODE)
-		printDebug("Form-> Parameter constructor called");
+		printDebug("AForm-> Parameter constructor called");
 	if (required_grade_to_sign < 1 || required_grade_to_exec < 1)
 		throw(GradeTooHighException());
 	if (required_grade_to_sign > 150 || required_grade_to_exec > 150)
@@ -34,17 +33,17 @@ Form::Form(const std::string& name, int required_grade_to_sign, int required_gra
 	
 }
 
-Form::Form(const Form& other)
+AForm::AForm(const AForm& other)
  : _name(other._name),
  _is_signed(other._is_signed),
  _required_grade_to_sign(other._required_grade_to_sign),
  _required_grade_to_exec(other._required_grade_to_exec)
 {
 	if (DEBUG_MODE)
-		printDebug("Form-> Copy constructor called");
+		printDebug("AForm-> Copy constructor called");
 }
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
 	if (this != &other)
 	{
@@ -53,31 +52,31 @@ Form& Form::operator=(const Form& other)
 	return (*this);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	if (DEBUG_MODE)
-		printDebug("Form-> Default destructor called");
+		printDebug("AForm-> Default destructor called");
 }
 
 
 
 /* ----- getters ----- */
-std::string Form::getName() const
+std::string AForm::getName() const
 {
 	return _name;
 }
 
-bool Form::getIsSigned() const
+bool AForm::getIsSigned() const
 {
 	return _is_signed;
 }
 
-int Form::getRequiredGradeToSign() const
+int AForm::getRequiredGradeToSign() const
 {
 	return _required_grade_to_sign;
 }
 
-int Form::getRequiredGradeToExec() const
+int AForm::getRequiredGradeToExec() const
 {
 	return _required_grade_to_exec;
 }
@@ -85,20 +84,20 @@ int Form::getRequiredGradeToExec() const
 
 
 /* ----- exceptions ----- */
-const char *Form::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const throw()
 {
-	return ("Form-> Exception caught: Grade too high! (Grade must be between 1 and 150)");
+	return ("AForm-> Exception caught: Grade too high! (Grade must be between 1 and 150)");
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("Form-> Exception caught: Grade too low! (Grade must be between 1 and 150)");
+	return ("AForm-> Exception caught: Grade too low! (Grade must be between 1 and 150)");
 }
 
 
 
 /* ----- methods ----- */
-void Form::beSigned(const Bureaucrat &x)
+void AForm::beSigned(const Bureaucrat &x)
 {
 	if (DEBUG_MODE)
 		printDebug("beSigned() called");
@@ -112,10 +111,10 @@ void Form::beSigned(const Bureaucrat &x)
 	}
 }
 
-std::ostream &operator<<(std::ostream &out_stream, const Form &x)
+std::ostream &operator<<(std::ostream &out_stream, const AForm &x)
 {
 	if (DEBUG_MODE)
-		printDebug("Form-> insertion (<<) overload operator called");
+		printDebug("AForm-> insertion (<<) overload operator called");
 
 	out_stream << "the form name is: " << x.getName() << std::endl;
 	out_stream << "is it signed? " << x.getIsSigned() << std::endl;

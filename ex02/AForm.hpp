@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Aform.hpp                                          :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 20:29:52 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 22:22:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include <exception>
@@ -21,22 +20,24 @@
 class Bureaucrat;
 
 
-class Form
+class AForm
 {
 	private:
 		const std::string _name;
 		bool _is_signed;
 		const int _required_grade_to_sign;
 		const int _required_grade_to_exec;
+		const std::string _target;
+
 
 
 	public:
 		/* ----- canonical form ----- */
-		Form();
-		Form(const std::string& name, int required_grade_to_sign, int required_grade_to_exec);
-		Form(const Form& other);
-		Form& operator=(const Form& other);
-		~Form();
+		AForm();
+		AForm(const std::string& name, int required_grade_to_sign, int required_grade_to_exec, const std::string &target);
+		AForm(const AForm& other);
+		AForm& operator=(const AForm& other);
+		~AForm();
 
 
 		/* ----- getters ----- */
@@ -47,7 +48,8 @@ class Form
 
 
 		/* ----- methods ----- */
-		void beSigned(const Bureaucrat &x);
+		virtual void beSigned(const Bureaucrat &x) = 0;
+		// void execute(Bureaucrat const &executor) const;
 
 
 
@@ -67,7 +69,7 @@ class Form
 
 };
 
-std::ostream &operator<<(std::ostream &out_stream, const Form &x);
+std::ostream &operator<<(std::ostream &out_stream, const AForm &x);
 
 
 #endif

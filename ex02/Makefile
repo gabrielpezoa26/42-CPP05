@@ -1,5 +1,5 @@
 NAME = MoreForms
-OBJECTS = objects/main.o objects/Bureaucrat.o objects/AForm.o
+OBJECTS = objects/main.o objects/Bureaucrat.o objects/AForm.o objects/ShrubberyCreationForm.o
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = objects
@@ -22,6 +22,14 @@ objects/Bureaucrat.o: Bureaucrat.cpp
 
 objects/AForm.o: AForm.cpp
 	$(CC) $(CFLAGS) -c AForm.cpp -o objects/AForm.o
+
+objects/ShrubberyCreationForm.o: ShrubberyCreationForm.cpp
+	$(CC) $(CFLAGS) -c ShrubberyCreationForm.cpp -o objects/ShrubberyCreationForm.o
+
+# objects/PresidentialPardonForm.o: PresidentialPardonForm.cpp
+# 	$(CC) $(CFLAGS) -c PresidentialPardonForm.cpp -o objects/PresidentialPardonForm.o
+
+
 
 
 clean:

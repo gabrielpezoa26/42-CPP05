@@ -15,6 +15,7 @@ ex02:
 
 
 	implementar:
+		-> form vira abstract
 		-> adaptar classes do anterior
 
 

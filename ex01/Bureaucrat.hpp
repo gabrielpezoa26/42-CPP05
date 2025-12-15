@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 17:02:56 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:35:29 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <exception>
 #include "Form.hpp"
 
-class Form;
+class AForm;
 
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -53,7 +53,7 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void printGrade();
-		void signForm(Bureaucrat &x, Form &y);
+		void signForm(Bureaucrat &x, AForm &y);
 
 		
 

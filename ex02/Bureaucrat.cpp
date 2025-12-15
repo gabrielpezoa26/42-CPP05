@@ -6,10 +6,9 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:19 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 20:29:14 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:40:58 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Bureaucrat.hpp"
 
@@ -90,7 +89,7 @@ void Bureaucrat::printGrade()
 	std::cout << "my grade is "<< grade << std::endl;
 }
 
-void Bureaucrat::signForm(Bureaucrat &x, Form &y)
+void Bureaucrat::signForm(Bureaucrat &x, AForm &y)
 {
 	try
 	{
