@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:23 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 21:14:19 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:10:17 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm;
 #define YELLOW "\033[33m"
 #define RESET "\033[0m"
 
-#define DEBUG_MODE false
+#define DEBUG_MODE true
 #define FULL_TEST false
 
 

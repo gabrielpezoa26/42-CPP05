@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 22:16:03 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:15:42 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ AForm::AForm(const std::string& name, int required_grade_to_sign, int required_g
 		throw(GradeTooHighException());
 	if (required_grade_to_sign > 150 || required_grade_to_exec > 150)
 		throw(GradeTooLowException());
-	
-	
 }
 
 AForm::AForm(const AForm& other)

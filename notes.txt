@@ -10,14 +10,10 @@ ex01:
 
 
 ex02:
-	revisar:
-		-> classe abstrata
-
-
 	implementar:
-		-> form vira abstract
-		-> adaptar classes do anterior
-
+		-> execute()-> executeForm()-> action()
+		-> logica de validaçao forms
+		-> açao especial de cada classe form
 
 
 
