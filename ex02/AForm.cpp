@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 23:15:42 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:15:21 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,14 @@ void AForm::beSigned(const Bureaucrat &x)
 		throw(GradeTooLowException());
 	}
 }
+
+void AForm::execute(Bureaucrat const &executor) const
+{
+	if (DEBUG_MODE)
+		printDebug("AForm-> execute() called");
+	std::cout << "DEBUG" << executor << std::endl;
+}
+
 
 std::ostream &operator<<(std::ostream &out_stream, const AForm &x)
 {

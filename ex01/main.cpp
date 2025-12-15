@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 20:35:29 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 10:49:22 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,9 @@ static void testFormCreation()
 {
 	try
 	{
-		log("Testing form creation");
+		logColor("Testing form creation", YELLOW);
 		log("creating a valid form...");
-		AForm validForm("valid_form", 10, 20);
+		Form validForm("valid_form", 10, 20);
 		std::cout << validForm << std::endl;
 	}
 	catch(const std::exception& e)
@@ -125,8 +125,8 @@ static void testFormCreation()
 
 	try
 	{
-		log("attempting to create a invalid form...");
-		AForm invalidForm("invalid_form", 100, 151);
+		logColor("now attempting to create a invalid form...", RED);
+		Form invalidForm("invalid_form", 100, 151);
 		std::cout << invalidForm << std::endl;
 	}
 	catch(const std::exception& e)
@@ -136,8 +136,8 @@ static void testFormCreation()
 	
 	try
 	{
-		log("\nattempting to create a invalid form again...");
-		AForm invalidForm("invalid_form", 100, -1);
+		logColor("\nattempting to create a invalid form again...", RED);
+		Form invalidForm("invalid_form", 100, -1);
 		std::cout << invalidForm << std::endl;
 	}
 	catch(const std::exception& e)
@@ -154,7 +154,7 @@ static void testFormSigning()
 	{
 		logColor("\n\n now let's make a bureaucrat sign something", YELLOW);
 		Bureaucrat a("bob", 60);
-		AForm b("form_one", 100, 50);
+		Form b("form_one", 100, 50);
 
 		std::cout << b << std::endl;
 
@@ -170,7 +170,7 @@ static void testFormSigning()
 	{
 		logColor("Now attempting to sign a form....", RED);
 		Bureaucrat x("Johnny", 101);
-		AForm y("form_two", 100, 100);
+		Form y("form_two", 100, 100);
 
 		std::cout << y << std::endl;
 		x.signForm(x, y);

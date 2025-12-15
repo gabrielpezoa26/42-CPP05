@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 22:22:13 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:06:05 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class AForm
 
 		/* ----- methods ----- */
 		virtual void beSigned(const Bureaucrat &x) = 0;
-		// void execute(Bureaucrat const &executor) const;
+		void execute(Bureaucrat const &executor) const;
 
 
 

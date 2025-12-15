@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 23:15:12 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:18:36 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 int main()
 {
+	Bureaucrat a("Bob", 10);
+	PresidentialPardonForm b("target");
+
+	// a.executeForm(b);
+	
+
 	log("compiled!");
 	return (0);
 }

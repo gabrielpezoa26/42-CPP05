@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:23 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 23:10:17 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:03:29 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class Bureaucrat
 		void decrementGrade();
 		void printGrade();
 		void signForm(Bureaucrat &x, AForm &y);
-		// void executeForm(AForm const &form) const;
+		void executeForm(AForm const &form) const;
 
 		
 

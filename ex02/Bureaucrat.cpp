@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:19 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 23:14:50 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:07:28 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void Bureaucrat::signForm(Bureaucrat &x, AForm &y)
 	try
 	{
 		y.beSigned(x);
-		std::cout << x.getName() << " signed " << y.getName() << std::endl;
+		std::cout << GREEN << x.getName() << " signed " << y.getName() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -141,4 +141,11 @@ std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &x)
 		printDebug("Bureaucrat-> insertion (<<) overload operator called");
 	out_stream << x.getName() << ", bureaucrat grade " << x.getGrade();
 	return (out_stream);
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	if (DEBUG_MODE)
+		printDebug("Bureaucrat-> executeForm() called");
+	std::cout << "DEBUG" << form << std::endl;
 }
