@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/15 11:06:05 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:19:13 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ class AForm
 		bool		getIsSigned() const;
 		int		getRequiredGradeToSign() const;
 		int		getRequiredGradeToExec() const;
+		std::string	getTarget() const;
 
 
 		/* ----- methods ----- */
-		virtual void beSigned(const Bureaucrat &x) = 0;
-		void execute(Bureaucrat const &executor) const;
+		virtual void beSigned(const Bureaucrat &x);
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 
 
@@ -66,6 +67,13 @@ class AForm
 		public:
 			virtual const char *what() const throw();
 	};
+
+	class FormNotSignedException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:04:40 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/14 23:01:08 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:32:58 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class ShrubberyCreationForm : public AForm
 
 
 		/* ----- methods ----- */
-		void createTrees(std::string form_target);
+		virtual void execute(Bureaucrat const &executor) const;
+		void createTrees(std::string form_target) const;
 };
 
 

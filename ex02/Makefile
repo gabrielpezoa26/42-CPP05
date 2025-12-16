@@ -1,5 +1,6 @@
 NAME = MoreForms
-OBJECTS = objects/main.o objects/Bureaucrat.o objects/AForm.o objects/ShrubberyCreationForm.o objects/PresidentialPardonForm.o
+OBJECTS = objects/main.o objects/Bureaucrat.o objects/AForm.o objects/ShrubberyCreationForm.o objects/PresidentialPardonForm.o \
+	objects/RobotomyRequestForm.o
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = objects
@@ -28,6 +29,9 @@ objects/ShrubberyCreationForm.o: ShrubberyCreationForm.cpp
 
 objects/PresidentialPardonForm.o: PresidentialPardonForm.cpp
 	$(CC) $(CFLAGS) -c PresidentialPardonForm.cpp -o objects/PresidentialPardonForm.o
+
+objects/RobotomyRequestForm.o: RobotomyRequestForm.cpp
+	$(CC) $(CFLAGS) -c RobotomyRequestForm.cpp -o objects/RobotomyRequestForm.o
 
 
 

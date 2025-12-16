@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 21:59:14 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 17:33:08 by gcesar-n         ###   ########.fr       */
+/*   Created: 2025/12/16 17:29:33 by gcesar-n          #+#    #+#             */
+/*   Updated: 2025/12/16 17:38:18 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIAL_PARDON_FORM_HPP
-#define PRESIDENTIAL_PARDON_FORM_HPP
+#ifndef ROBOTOMY_REQUEST_FORM_HPP
+#define ROBOTOMY_REQUEST_FORM_HPP
 
 #include <iostream>
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	public:
 		/* ----- canonical form ----- */
-		PresidentialPardonForm();
-		PresidentialPardonForm(const std::string &form_target);
-		PresidentialPardonForm(const PresidentialPardonForm& other);
-		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
-		~PresidentialPardonForm();
+		RobotomyRequestForm();
+		RobotomyRequestForm(const std::string &form_target);
+		RobotomyRequestForm(const RobotomyRequestForm& other);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+		~RobotomyRequestForm();
 
 
 		/* ----- methods ----- */
 		virtual void execute(Bureaucrat const &executor) const;
-		void pardon(const std::string form_target) const;
+		void robotomy(const std::string form_target) const;
+	
 };
+
+
+
 
 #endif

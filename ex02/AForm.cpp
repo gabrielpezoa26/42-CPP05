@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/15 11:15:21 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:11:15 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,10 @@ int AForm::getRequiredGradeToExec() const
 	return _required_grade_to_exec;
 }
 
-
+std::string AForm::getTarget() const
+{
+	return _target;
+}
 
 /* ----- exceptions ----- */
 const char *AForm::GradeTooHighException::what() const throw()
@@ -92,6 +95,10 @@ const char *AForm::GradeTooLowException::what() const throw()
 	return ("AForm-> Exception caught: Grade too low! (Grade must be between 1 and 150)");
 }
 
+const char *AForm::FormNotSignedException::what() const throw()
+{
+	return ("AForm-> Exception caught: Form is not signed!!");
+}
 
 
 /* ----- methods ----- */
@@ -108,14 +115,6 @@ void AForm::beSigned(const Bureaucrat &x)
 		throw(GradeTooLowException());
 	}
 }
-
-void AForm::execute(Bureaucrat const &executor) const
-{
-	if (DEBUG_MODE)
-		printDebug("AForm-> execute() called");
-	std::cout << "DEBUG" << executor << std::endl;
-}
-
 
 std::ostream &operator<<(std::ostream &out_stream, const AForm &x)
 {
