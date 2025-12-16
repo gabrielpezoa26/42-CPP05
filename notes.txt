@@ -1,19 +1,9 @@
-14/12/2025
-
-
-ex01:
-	implementar:
-
-		-> organizar output
-
-
+16/12/2025
 
 
 ex02:
 	implementar:
-		-> execute()-> executeForm()-> action()
-		-> logica de validaçao forms
-		-> açao especial de cada classe form
+		-> açao especial de cada classe formulario (1/3)
 
 
 

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:04:35 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 17:32:52 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:59:48 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void  ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	if (DEBUG_MODE)
+		printDebug("Shrubbery-> execute() called");
 	if (getIsSigned() == false)
 		throw(FormNotSignedException());
 	if (executor.getGrade() > 137)

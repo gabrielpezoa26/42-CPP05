@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:59:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 17:35:47 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:59:04 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,13 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void  PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
+	if (DEBUG_MODE)
+		printDebug("Presidential-> execute() called");
 	if (getIsSigned() == false)
 		throw(FormNotSignedException());
 	if (executor.getGrade() > 5)
 		throw(GradeTooLowException());
 	pardon(getTarget());
-	std::cout << executor << " executed " << getName() << std::endl;
 }
 
 
@@ -64,8 +65,7 @@ void  PresidentialPardonForm::execute(Bureaucrat const &executor) const
 void PresidentialPardonForm::pardon(std::string form_target) const
 {
 	if (DEBUG_MODE)
-	{
-		std::cout << form_target << std::endl;  //tirar dps
 		printDebug("Presidential-> pardon() called");
-	}
+
+	std::cout << form_target << " has benn pardoned by Zaphod Beeblebrox." << std::endl;
 }

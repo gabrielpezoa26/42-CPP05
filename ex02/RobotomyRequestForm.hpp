@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:29:33 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 17:38:18 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 19:36:44 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define ROBOTOMY_REQUEST_FORM_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include "AForm.hpp"
+
 
 class RobotomyRequestForm : public AForm
 {
