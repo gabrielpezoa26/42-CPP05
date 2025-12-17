@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:04:40 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 22:24:54 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/17 16:26:17 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define SHRUBBERY_CREATION_FORM_HPP
 
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
