@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:59:11 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 18:59:04 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 22:25:04 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void  PresidentialPardonForm::execute(Bureaucrat const &executor) const
 		throw(GradeTooLowException());
 	pardon(getTarget());
 }
+
 
 
 /* ----- methods ----- */

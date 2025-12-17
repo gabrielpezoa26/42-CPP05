@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:04:35 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 18:59:48 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 22:25:11 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void  ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	createTrees(getTarget());
 	std::cout << executor << " executed " << getName() << std::endl;
 }
+
+
 
 /* ----- methods ----- */
 void ShrubberyCreationForm::createTrees(std::string form_target) const

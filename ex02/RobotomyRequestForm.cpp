@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:29:20 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 19:38:23 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/16 22:25:14 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,24 @@ void  RobotomyRequestForm::execute(Bureaucrat const &executor) const
 }
 
 
+
 /* ----- methods ----- */
 void RobotomyRequestForm::robotomy(std::string form_target) const
 {
-	int random_number = rand() % 11;
 	if (DEBUG_MODE)
-	{
-		std::cout << form_target << std::endl;  //tirar dps
 		printDebug("Robotomy-> robotomy() called");
+	
+	static bool seed_flag = false;
+	if (!seed_flag)
+	{
+		srand(time(NULL));
+		seed_flag = true;
 	}
 
-	if (random_number >= 5)
-		log("deu bom");
-	else if (random_number > 5)
-		log ("deu ruim");
+	log ("* bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz *");
+	int random_value = rand() % 2;
+	if (random_value == 0)
+		std::cout << "Sucess! " << form_target << " has been robotomized! " << std::endl;
+	else
+		std::cout << "Robotomy failed :((" << std::endl;
 }
-
-
