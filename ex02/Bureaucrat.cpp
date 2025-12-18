@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:19 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/16 18:56:32 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:26:35 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,8 +150,8 @@ void Bureaucrat::executeForm(AForm const &form) const
 
 	try
 	{
-		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 		form.execute(*this);
+		// std::cout << this->getName() << " executed " << form.getName() << std::endl;  //TIRAR DPS
 
 	}
 	catch(const std::exception& e)

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:04:35 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/17 19:42:09 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:33:32 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,16 @@ void ShrubberyCreationForm::createTrees(std::string form_target) const
 	outfile.open((std::string(form_target + "_shrubbery").c_str()));
 	if (outfile.fail())
 		log("Error creating file");
-	outfile << "AAAAAAAAAAAAAAAAA\n";
-	outfile << "BBBBBBBBBBBBBBBBB\n";
-	outfile << "CCCCCCCCCCCCCCCCC\n";
+	outfile << "      ###                 @@@                &&&\n";
+	outfile << "    #######             @@@@@@@            &&&&&&&\n";
+	outfile << "  ###########         @@@@@@@@@@@        &&&&&&&&&&\n";
+	outfile << "    #######             @@@@@@@            &&&&&&&\n";
+	outfile << "      ###                 @@@                &&&\n";
+	outfile << "       |                   |                  |\n";
+	outfile << "       |                   |                  |\n";
+	outfile << "       |                   |                  |\n";
 
+
+	
 	outfile.close();
 }
-
-// "      ###                 @@@                &&&"
-// "    #######             @@@@@@@            &&&&&&&"
-// "  ###########         @@@@@@@@@@@        &&&&&&&&&&"
-// "    #######             @@@@@@@            &&&&&&&"
-// "      ###                 @@@                &&&"
-// "       |                   |                  |"
-// "       |                   |                  |"

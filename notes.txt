@@ -3,16 +3,4 @@
 
 ex02:
 	implementar:
-		-> açao especial de cada classe formulario (3/3)
-		-> arvore no Shrubbery
 		-> adicionar testes main()
-
-
-
-links:
-	https://www.youtube.com/watch?v=Ix05fozWn0A
-	
-	https://www.geeksforgeeks.org/cpp/exceptionwhat-in-c-with-examples/
-
-	https://www.geeksforgeeks.org/cpp/exceptionwhat-in-c-with-examples/
-
