@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/18 21:50:55 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:50:53 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,9 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-/*
-	testar:
-		-> criação de burocratas             ok
-		-> incremento/decremento dos kra        ok
-
-		-> criação de forms                    ok
-		-> tentar instanciar AForm     
-		-> assinar forms                    ok
-
-
-		-> exec de forms:
-			-> pardon()        ok
-			-> createTrees()         ok
-			-> robotomy()       ok
-*/
-
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
-// static void testAFormInstantiation();
 static void testShrubbery();
 static void testRobotomy();
 static void testPresidentialPardon();
@@ -44,7 +27,7 @@ int main()
 	Bureaucrat a("Bob", 1);
 	ShrubberyCreationForm d("house");
 
-	if (FULL_TEST)
+	if (REGRESSION_TEST)
 	{
 		logColor("------- Testing previous exercise methods -------", YELLOW);
 		testValidBureaucrat();

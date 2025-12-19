@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:16 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/18 15:48:36 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:24:58 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AForm
 		AForm(const std::string& name, int required_grade_to_sign, int required_grade_to_exec, const std::string &target);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
-		~AForm();
+		virtual ~AForm();
 
 
 		/* ----- getters ----- */

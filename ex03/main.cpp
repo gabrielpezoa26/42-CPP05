@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/18 21:50:55 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:32:27 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,34 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-
-/*
-	testar:
-		-> criação de burocratas             ok
-		-> incremento/decremento dos kra        ok
-
-		-> criação de forms                    ok
-		-> tentar instanciar AForm     
-		-> assinar forms                    ok
-
-
-		-> exec de forms:
-			-> pardon()        ok
-			-> createTrees()         ok
-			-> robotomy()       ok
-*/
+#include "Intern.hpp"
 
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
-// static void testAFormInstantiation();
 static void testShrubbery();
 static void testRobotomy();
 static void testPresidentialPardon();
+static void testIntern();
 
 int main()
 {
 	Bureaucrat a("Bob", 1);
 	ShrubberyCreationForm d("house");
 
-	if (FULL_TEST)
+	if (REGRESSION_TEST)
 	{
 		logColor("------- Testing previous exercise methods -------", YELLOW);
 		testValidBureaucrat();
 		testInvalidBureaucrat();
 		testInvalidGradeChange();
+		testShrubbery();
+		testRobotomy();
+		testPresidentialPardon();
+
 	}
-	logColor("\n------- Now testing ex02 specific methods -------", YELLOW);
-	testShrubbery();
-	testRobotomy();
-	testPresidentialPardon();
-	
+	logColor("\n------- Now testing ex03 specific methods -------", YELLOW);
+	testIntern();
 	return (0);
 }
 
@@ -255,4 +241,66 @@ static void testPresidentialPardon()
 		std::cerr << e.what() << '\n';
 	}
 
+}
+
+static void testIntern()
+{
+	Intern  someRandomIntern;
+	AForm* temp = NULL;
+
+	logColor("\n------- Testing Robotomy Request -------", BLUE);
+	try
+	{
+		temp = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *temp << std::endl;
+			
+		delete temp;
+		temp = NULL;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+		if (temp)
+			delete temp;
+	}
+
+
+	logColor("\n------- Testing Shrubbery Creation -------", BLUE);
+	try
+	{
+		temp = someRandomIntern.makeForm("shrubbery creation", "Home");
+		std::cout << *temp << std::endl;
+		delete temp;
+		temp = NULL;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	logColor("\n------- Testing Presidential Pardon -------", BLUE);
+	try
+	{
+		temp = someRandomIntern.makeForm("presidential pardon", "Alice");
+		std::cout << *temp << std::endl;
+		delete temp;
+		temp = NULL;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+
+	logColor("\n------- Testing Invalid Form Name -------", RED);
+	try
+	{
+		temp = someRandomIntern.makeForm("make me a coffee", "big boss");
+		std::cout << "This should not be printed!" << std::endl;
+		delete temp; 
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Caught expected exception: " << e.what() << std::endl;
+	}
 }

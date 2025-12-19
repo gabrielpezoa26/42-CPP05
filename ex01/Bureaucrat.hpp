@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:02 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/15 10:47:35 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:50:25 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form;
 #define RESET "\033[0m"
 
 #define DEBUG_MODE false
-#define FULL_TEST false
+#define REGRESSION_TEST false
 
 
 class Bureaucrat
