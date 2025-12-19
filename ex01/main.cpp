@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:17:04 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/19 11:50:25 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:48:44 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
+
 static void testFormCreation();
 static void testFormSigning();
 
@@ -22,14 +23,14 @@ int main()
 {
 	if (REGRESSION_TEST)
 	{
+		logColor("------- Testing previous exercise methods -------", YELLOW);
 		testValidBureaucrat();
 		testInvalidBureaucrat();
 		testInvalidGradeChange();
 	}
+	logColor("\n------- Now testing ex01 specific methods -------", YELLOW);
 	testFormCreation();
 	testFormSigning();
-
-	log("\nprogram finished :))");
 	return (0);
 }
 

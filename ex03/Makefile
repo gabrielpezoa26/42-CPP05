@@ -1,4 +1,4 @@
-NAME = MoreForms
+NAME = Intern
 OBJECTS = objects/main.o objects/Bureaucrat.o objects/AForm.o objects/ShrubberyCreationForm.o objects/PresidentialPardonForm.o \
 	objects/RobotomyRequestForm.o objects/Intern.o
 CC = c++

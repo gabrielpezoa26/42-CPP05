@@ -6,14 +6,10 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/19 12:32:27 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:46:51 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
 static void testValidBureaucrat();
@@ -22,6 +18,7 @@ static void testInvalidGradeChange();
 static void testShrubbery();
 static void testRobotomy();
 static void testPresidentialPardon();
+
 static void testIntern();
 
 int main()
@@ -278,6 +275,7 @@ static void testIntern()
 		std::cerr << e.what() << std::endl;
 	}
 
+
 	logColor("\n------- Testing Presidential Pardon -------", BLUE);
 	try
 	{
@@ -297,7 +295,7 @@ static void testIntern()
 	{
 		temp = someRandomIntern.makeForm("make me a coffee", "big boss");
 		std::cout << "This should not be printed!" << std::endl;
-		delete temp; 
+		delete temp;
 	}
 	catch (std::exception &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/19 11:50:53 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:46:59 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 static void testValidBureaucrat();
 static void testInvalidBureaucrat();
 static void testInvalidGradeChange();
+
 static void testShrubbery();
 static void testRobotomy();
 static void testPresidentialPardon();
