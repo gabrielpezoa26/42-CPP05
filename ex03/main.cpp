@@ -6,7 +6,7 @@
 /*   By: gcesar-n <gcesar-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:23:06 by gcesar-n          #+#    #+#             */
-/*   Updated: 2025/12/19 12:46:51 by gcesar-n         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:53:46 by gcesar-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,7 +242,7 @@ static void testPresidentialPardon()
 
 static void testIntern()
 {
-	Intern  someRandomIntern;
+	Intern someRandomIntern;
 	AForm* temp = NULL;
 
 	logColor("\n------- Testing Robotomy Request -------", BLUE);
@@ -262,7 +262,7 @@ static void testIntern()
 	}
 
 
-	logColor("\n------- Testing Shrubbery Creation -------", BLUE);
+	logColor("------- Testing Shrubbery Creation -------", BLUE);
 	try
 	{
 		temp = someRandomIntern.makeForm("shrubbery creation", "Home");
